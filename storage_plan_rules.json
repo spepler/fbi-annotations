@@ -1,0 +1,38 @@
+
+
+{
+  "applies_to": {},
+  "annotation": {"storage_plan": ["on_tape", "on_disk"]},
+  "merge_strategy": "default"
+}
+
+{"applies_to": {"under": "/neodc/modis/data"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/neodc/modis/data"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/badc/.testing"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/ngdc/.testing"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/pddc/.testing"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/.testing"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/bodc/.testing"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/badc/.testing/data/backup-test"}, "annotation": {"storage_plan": ["on_tape", "on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/bodc/.testing"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/badc/ARCHIVE_INFO"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/badc/ukmo-um"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/badc/ukmo-africa-lam"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/badc/ukmo-for"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/badc/rcemip"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/neodc/sciamachy"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/neodc/sentinel1a", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel1b", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel2a", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel2b", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel3a", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+
