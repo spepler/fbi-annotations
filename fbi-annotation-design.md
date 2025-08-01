@@ -67,18 +67,10 @@ b.save()
 ...
 
 
-# delete a rule
+# delete rules
 annotations = find_fbi_annotations(applies_under="/data", applies_ext=".zip", annotation_keys=["storage_plan"])
 for a in annotations:
      a.delete()
-
-# delete by id
-annotations = find_fbi_annotations(applies_to={"under": "/data"}, annotation_has_key="storage_plan")
-for a in annotations:
-    print(a.id).   # prints dfsdkfjsdfhsdk
-...        
-get_annotation_by_id("dfsdkfjsdfhsdk").delete()
-
 
 # use fbi to make context
 find_fbi_annotations("/data/cmip5/file123.nc")
@@ -155,6 +147,7 @@ Defines **which files**, directories or links the annotation applies to.
 | `after_mod_date`      | string (date) | applies to paths with modification dates after this date |
 | `older_mod_date`      | number (days) | applies to paths with modification dates that are older than this in days |    
 | `younger_mod_date`    | number (days) | applies to paths with modification dates that are younger than this in days |  
+| `filename_regex`      | regex         | applies to files with name matching regex |  
 
 
 > Combine multiple filters for precision. All conditions must match (logical AND). Missing fields 
@@ -356,24 +349,50 @@ applying to the right parts of the archive. Say  you write an annotation which y
 a set of jpeg files under `/a/b/c`. Using this function we can see that its as well as all the data
 files `/a/b/c/data/A.jpeg`, `/a/b/c/data/A.jpeg`, ..., its also catching `/a/b/c/metadata/layout.jpeg`. 
 
+```python
+def find_fbi_items_by_annotation(anno: FBIAnnotation) -> list[FBIRecords]:
+    ...
+```
+
 ### 8.2 Which annotations apply to this file?
 
 Find all the annotations that apply to an indervidal file (could be a dir or symlink). This is needed to 
 show a view of a file that includes as much rich information as possible. The infomation can be rendered for 
 human inspection or an API. 
 
+```python
+def find_fbi_annotations(f: str | FBIRecord) -> list[FBIAnnotation]:
+    ...
+```
+
 ### 8.3 Mix the annotations together with the FBI record for a file. 
 
 Given a path, find the FBI record, and look for annotations that apply. Use precidence rules to combine them into a 
 single rich record with the most relivent information.
 
-### 8.3 Which annotations are relivent for this directory?
+```python
+def merge_annotations(annos: list[FBIAnnotation]) -> dict:
+    ...
+
+# conviniance function
+def annotated_fbi_record(f: str | FBIRecord) -> dict:
+    return merge_annotations(find_fbi_annotations(f))
+```
+### 8.4 Which annotations are relivent for this directory?
 
 Find all the annotations that apply with this direcory . This is needed to 
 show a view of a file that includes as much rich information as possible. The infomation can be rendered for 
 human inspection or an API.
 
 
+### 8.5 Find annotations 
+
+Find all annotations from search 
+
+```python
+def find_fbi_annotations(with_annotation_key: str | None = None, under: str | None = None, ... ) -> list[FBIAnnotation]:
+    ...
+```
 
 
 ---

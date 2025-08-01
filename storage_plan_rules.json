@@ -30,9 +30,11 @@
 
 {"applies_to": {"under": "/neodc/sciamachy"}, "annotation": {"storage_plan": ["on_disk"]}, "merge_strategy": "default"}
 
-{"applies_to": {"under": "/neodc/sentinel1a", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
-{"applies_to": {"under": "/neodc/sentinel1b", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
-{"applies_to": {"under": "/neodc/sentinel2a", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
-{"applies_to": {"under": "/neodc/sentinel2b", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
-{"applies_to": {"under": "/neodc/sentinel3a", "regex_date_older_than": "6 months"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel1a", "regex_date_older_than": "5 months", "ext": ".zip"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel1b", "regex_date_older_than": "5 months", "ext": ".zip"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel2a", "regex_date_older_than": "24 months", "ext": ".zip"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel2b", "regex_date_older_than": "24 months", "ext": ".zip"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+{"applies_to": {"under": "/neodc/sentinel3a", "regex_date_older_than": "24 months", "ext": ".zip"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
+
+{"applies_to": {"under": "/neodc/sentinel3a", "filename_regex": "rt", "ext": ".zip"}, "annotation": {"storage_plan": ["on_tape"]}, "merge_strategy": "default"}
 
